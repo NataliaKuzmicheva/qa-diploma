@@ -14,6 +14,9 @@ services:
 
   postgres:
     image: postgres:14-alpine
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
     environment:
@@ -21,16 +24,7 @@ services:
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=pass
 
-  node:
-    image: "node:8"
-    user: "node"
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./:/home/node/app
-    expose:
-      - "8081"
-    ports: # use if it is necessary to expose the container to the host machine
-      - "8001:8001"
-    command: "npm start"
+  nodejs:
+    build: ./gate-simulator
+    ports:
+      - '9999:9999'

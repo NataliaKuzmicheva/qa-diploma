@@ -8,6 +8,7 @@ import org.junit.jupiter.api.*;
 import page.TourPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BuyTourByCard {
     String approvedCardNumber = DataHelper.getApproved().getCardNumber();
@@ -56,13 +57,13 @@ public class BuyTourByCard {
     @Test
     @DisplayName("Покупка тура по карте со всеми валидными значениями со статусом карты “Declined”")
     public void shouldBuyWithDeclinedCard() {
-    TourPage tour = new TourPage();
-    tour.tourPage();
-    var paymentPage = tour.paymentCard();
-    paymentPage.cleanFields();
-    paymentPage.fillForm(declinedCardNumber, validMonth, validYear, validOwner, validCode);
-    paymentPage.paymentDeclined();
-    Assertions.assertEquals("DECLINED", SqlHelper.getCardPayment());
+        TourPage tour = new TourPage();
+        tour.tourPage();
+        var paymentPage = tour.paymentCard();
+        paymentPage.cleanFields();
+        paymentPage.fillForm(declinedCardNumber, validMonth, validYear, validOwner, validCode);
+        paymentPage.paymentDeclined();
+        Assertions.assertEquals("DECLINED", SqlHelper.getCardPayment());
     }
 
     @Test
@@ -149,7 +150,7 @@ public class BuyTourByCard {
         var ownerRussianName = DataHelper.generateOwnerRus();
         paymentPage.cleanFields();
         paymentPage.fillForm(approvedCardNumber, validMonth, validYear, validOwnerRus, validCode);
-        paymentPage.incorrectFormat();
+        paymentPage.paymentDeclined();
     }
 
     @Test
@@ -161,7 +162,7 @@ public class BuyTourByCard {
         var ownerNumber = DataHelper.generateOwnerWithNumbers();
         paymentPage.cleanFields();
         paymentPage.fillForm(approvedCardNumber, validMonth, validYear, validOwnerWithNumber, validCode);
-        paymentPage.incorrectFormat();
+        paymentPage.paymentDeclined();
     }
 
     @Test
@@ -173,7 +174,7 @@ public class BuyTourByCard {
         var ownerSpecialSymbols = "!@#$%&";
         paymentPage.cleanFields();
         paymentPage.fillForm(approvedCardNumber, validMonth, validYear, ownerSpecialSymbols, validCode);
-        paymentPage.incorrectFormat();
+        paymentPage.paymentDeclined();
     }
 
     @Test
@@ -187,4 +188,5 @@ public class BuyTourByCard {
         paymentPage.fillForm(approvedCardNumber, validMonth, validYear, validOwner, String.valueOf(twoDigitsCVC));
         paymentPage.incorrectFormat();
     }
+}
 

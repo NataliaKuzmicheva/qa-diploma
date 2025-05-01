@@ -22,7 +22,8 @@ public class PaymentPage {
     private final SelenideElement cvcField = $("[placeholder='999']");
     private final SelenideElement continueButton = $$(".button__content").findBy(text("Продолжить"));
     private final SelenideElement paymentApproved = $$(".notification__title").findBy(text("Успешно"));
-    private final SelenideElement paymentDeclined = $$(".notification__title").findBy(text("Ошибка! Банк отказал в проведении операции"));
+    private final SelenideElement paymentDeclined = $$(".notification__content").findBy(text("Ошибка! Банк отказал в проведении операции"));
+
     private final SelenideElement incorrectFormat = $$(".input__sub").findBy(text("Неверный формат"));
     private final SelenideElement requiredField = $$(".input__sub").findBy(text("Поле обязательно для заполнения"));
     private final SelenideElement expiredCard = $$(".input__sub").findBy(text("Истёк срок действия карты"));

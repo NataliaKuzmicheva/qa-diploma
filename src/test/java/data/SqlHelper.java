@@ -7,14 +7,16 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 public class SqlHelper {
-    private static final QueryRunner runner = new QueryRunner();
+
+    private static QueryRunner runner = new QueryRunner();
 
     private SqlHelper() {}
 
     @SneakyThrows
     private static Connection getConnection() {
-        return DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"), System.getProperty("db.pass"));
+        return DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
     }
 
     @SneakyThrows
