@@ -2,7 +2,7 @@
 
 ## Описание
 
-Проведено автоматизированное тестирование веб-приложения "Путешествие дня" в соответствии с [планом тестирования](https://github.com/NataliaKuzmicheva/qa-diploma/blob/main/documents/Plan.md)
+Проведено автоматизированное тестирование веб-приложения "Путешествие дня" в соответствии с [планом тестирования](https://github.com/NataliaKuzmicheva/qa-diploma/blob/main/documents/Plan.md).
 
 *Общее количество тестов: 24*
 
@@ -11,9 +11,9 @@
 Пройдено тестов - 16 (66,66 %)
 Провалено тестов - 8 (33,33 %)
 
-![2025-05-01_21-41-59.png](..%2F..%2F..%2FYandexDisk-ginetulina.nat%2F%D1%EA%F0%E8%ED%F8%EE%F2%FB%2F2025-05-01_21-41-59.png)
-![2025-05-01_21-48-33.png](..%2F..%2F..%2FYandexDisk-ginetulina.nat%2F%D1%EA%F0%E8%ED%F8%EE%F2%FB%2F2025-05-01_21-48-33.png)
-![2025-05-01_21-49-10.png](..%2F..%2F..%2FYandexDisk-ginetulina.nat%2F%D1%EA%F0%E8%ED%F8%EE%F2%FB%2F2025-05-01_21-49-10.png)
+![2025-05-01_21-41-59](https://github.com/user-attachments/assets/3c4c4c80-2a2f-42bf-86a7-5f3e29afc7c6)
+![2025-05-01_21-48-33](https://github.com/user-attachments/assets/088cbf5f-8845-454c-97ad-dc180daed302)
+![2025-05-01_21-49-10](https://github.com/user-attachments/assets/dffdf78f-0b86-48f6-95c6-26db1a2e0977)
 
 На проваленные тесты заведены баг-репорты (ссылка)
 
