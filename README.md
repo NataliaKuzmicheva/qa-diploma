@@ -28,12 +28,22 @@
       ```
       java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar artifacts/aqa-shop.jar
       ```
+   
+    - для PostgreSQL:
+     ```
+     java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
+     ```
     
 6. Сервис будет запущен в браузере по адресу: http://localhost:8080;
 7. Запустить автотесты в терминале при помощи команды:
     - для MySQL:
       ```
       ./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"
+      ```
+   
+    - для PostgreSQL:
+      ```
+      ./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
       ```
 8. Сгенерировать отчёт по итогам тестирования с помощью **Allure**, который автоматически откроется в браузере с помощью команды в терминале:
    ```
