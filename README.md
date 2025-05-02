@@ -3,9 +3,9 @@
 
 ## Необходимая документация
 - [Задание на дипломный проект](https://github.com/netology-code/qa-diploma)
-- [План автоматизации](ссылка)
+- [План автоматизации](https://github.com/NataliaKuzmicheva/qa-diploma/blob/main/documents/Plan.md)
 - [Отчет по результатам автоматизированного тестирования](ссылка)
-- [Отчет по автоматизации](ссылка)
+- [Отчет по автоматизации](https://github.com/NataliaKuzmicheva/qa-diploma/blob/main/documents/Report.md)
 
 ## Начало работы
 
