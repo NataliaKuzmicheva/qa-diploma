@@ -16,7 +16,7 @@
 ![2025-05-01_21-48-33](https://github.com/user-attachments/assets/088cbf5f-8845-454c-97ad-dc180daed302)
 ![2025-05-01_21-49-10](https://github.com/user-attachments/assets/dffdf78f-0b86-48f6-95c6-26db1a2e0977)
 
-На проваленные тесты заведены баг-репорты (ссылка)
+На проваленные тесты заведены [баг-репорты](https://github.com/NataliaKuzmicheva/qa-diploma/issues)
 
 ## Рекомендации
 
