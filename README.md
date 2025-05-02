@@ -30,9 +30,9 @@
       ```
    
     - для PostgreSQL:
-     ```
-     java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
-     ```
+      ```
+      java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar artifacts/aqa-shop.jar
+      ```
     
 6. Сервис будет запущен в браузере по адресу: http://localhost:8080;
 7. Запустить автотесты в терминале при помощи команды:
