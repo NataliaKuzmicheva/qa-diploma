@@ -23,6 +23,10 @@
 
 Провалено тестов - 8 (33,33 %)  
 
+![2025-05-02_19-29-10](https://github.com/user-attachments/assets/05211c93-61a9-4ff0-b3b7-dcdbae7bb833)
+![2025-05-02_19-29-28](https://github.com/user-attachments/assets/5e0792be-81bf-4619-af3e-81f9f178b9f4)
+![2025-05-02_19-29-42](https://github.com/user-attachments/assets/d0b9517d-81bf-4f14-8193-8c7eb9e02622)
+
 
 На проваленные тесты заведены [баг-репорты](https://github.com/NataliaKuzmicheva/qa-diploma/issues)
 
