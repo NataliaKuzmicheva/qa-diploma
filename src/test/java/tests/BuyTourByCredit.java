@@ -19,10 +19,12 @@ public class BuyTourByCredit {
     String validOwnerRus = DataHelper.generateOwnerRus();
     String validOwnerWithNumber = DataHelper.generateOwnerWithNumbers();
     String validCode = DataHelper.generateCVC();
+    TourPage tour;
 
     @BeforeEach
     public void setUp() {
         open("http://localhost:8080");
+        tour = new TourPage();
     }
 
     @BeforeAll
@@ -44,7 +46,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со всеми валидными значениями со статусом карты “Approved”")
     public void shouldBuyWithApprovedCard() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         creditPage.cleanFields();
@@ -56,7 +57,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со всеми валидными значениями со статусом карты “Declined”")
     public void shouldBuyWithDeclinedCard() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         creditPage.cleanFields();
@@ -68,7 +68,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с невалидным значением месяца со статусом карты “Approved”")
     public void notShouldBuyWithApprovedCardWithInvalidMonth() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var invalidMonth = "13";
@@ -80,7 +79,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с невалидным значением месяца со статусом карты “Declined”")
     public void notShouldBuyWithDeclinedCardWithInvalidMonth() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var invalidMonth = "13";
@@ -92,7 +90,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с истекшим значением года со статусом карты “Approved”")
     public void notShouldBuyWithApprovedCardWithExpiredPeriod() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var yearExpired = DataHelper.generateYear(-1);
@@ -104,7 +101,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с истекшим значением года со статусом карты “Declined”")
     public void notShouldBuyWithDeclinedCardWithExpiredPeriod() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var yearExpired = DataHelper.generateYear(-1);
@@ -116,7 +112,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с пустыми значениями в форме")
     public void shouldSendFormWithEmptyFields() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var emptyCardNumber = "";
@@ -132,7 +127,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит с несуществующим номером карты")
     public void notShouldBuyWithRandomCard() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         creditPage.cleanFields();
@@ -143,7 +137,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со значением ФИО на кириллице")
     public void notShouldBuyWithOwnerRussianName() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var ownerRussianName = DataHelper.generateOwnerRus();
@@ -155,7 +148,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со значением ФИО цифрами")
     public void notShouldBuyWithOwnerWithNumbers() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var ownerNumber = DataHelper.generateOwnerWithNumbers();
@@ -167,7 +159,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со значением ФИО специальными символами")
     public void notShouldBuyWithOwnerWithSpecialSymbols() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var ownerSpecialSymbols = "!@#$%&";
@@ -179,7 +170,6 @@ public class BuyTourByCredit {
     @Test
     @DisplayName("Покупка тура в кредит со значением CVC/CVV одной цифрой")
     public void notShouldBuyWithDigitsCVCCode() {
-        TourPage tour = new TourPage();
         tour.tourPage();
         var creditPage = tour.paymentCredit();
         var twoDigitsCVC = DataHelper.generateCVC().length() - 1;
